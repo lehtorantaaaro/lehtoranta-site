@@ -30,26 +30,43 @@
       margin: 0;
       font-family: Inter, "Segoe UI", Arial, sans-serif;
       color: var(--text);
-      background:
-        linear-gradient(rgba(235, 247, 245, 0.58), rgba(240, 249, 255, 0.72)),
-        url("assets/hero-nature.jpg") center center / cover no-repeat fixed;
+      background: linear-gradient(180deg, #eef7f4, #f5fbff);
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
     }
 
-    body::before {
-      content: "";
+    .page-bg {
       position: fixed;
       inset: 0;
+      z-index: -3;
+      background:
+      linear-gradient(rgba(236, 247, 244, 0.42), rgba(242, 249, 255, 0.58)),
+      url("assets/hero-nature.jpg") center center / cover no-repeat;
+      transform: scale(1.03);
+    }
+
+    .page-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
       pointer-events: none;
       background:
-        radial-gradient(circle at 18% 14%, rgba(163, 255, 218, 0.28), transparent 22%),
-        radial-gradient(circle at 83% 12%, rgba(141, 213, 255, 0.28), transparent 24%),
-        radial-gradient(circle at 50% 78%, rgba(255, 255, 255, 0.20), transparent 26%),
-        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.22));
-      z-index: -1;
+      radial-gradient(circle at 18% 14%, rgba(163, 255, 218, 0.22), transparent 22%),
+      radial-gradient(circle at 83% 12%, rgba(141, 213, 255, 0.24), transparent 24%),
+      radial-gradient(circle at 50% 78%, rgba(255, 255, 255, 0.18), transparent 26%),
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.18));
     }
+
+    .page-fade {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
 
     a {
       color: inherit;
